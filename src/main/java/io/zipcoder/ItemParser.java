@@ -37,20 +37,7 @@ public class ItemParser {
         Pattern pattern1 = Pattern.compile(pattern);
         Matcher matcher = pattern1.matcher(singleItem);
 
-        try{
-            matcher.matches();
-            String name = matcher.group(2).toLowerCase();
-            if(name.contains("0")) {
-                name = name.replace('0', 'o');
-            }
-            Double price = Double.valueOf(matcher.group(4));
-            String string = matcher.group(6).toLowerCase();
-            String expireDate = matcher.group(8);
-            return new Item(name, price, string,expireDate);
-
-        }catch (Exception e) {
-            throw new ItemParseException();
-        }
+        return null;
 
     }
     public String converzeroTOO(String str) {
